@@ -1,10 +1,20 @@
-header {
+#main-header {
   height: 400px;
   width: 100vw;
-  background-color: bisque ;
+  background-color: pink ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url("../images/cubes.png");
+}
+
+header#main-header .name {
+  color: white;
+  font-weight: bold;
+}
+
+header#main-header .last-name {
+  color: white;
+  font-weight: normal;
 }
