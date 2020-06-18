@@ -50,18 +50,26 @@ const renderTweets = function (tweets) {
 
 $(document).ready(function () {
   $('.submit-tweet').on('submit', function (event) {
-    const $form = $(".submit-tweet");
     event.preventDefault();
-    $.post('/tweets', $(this).serialize(), function() {
-      console.log( "success" );
-      // loadTweets()
+    const data = $(this).serialize().slice(5);;
+    // check if the tweet text is null or exceeds the character limits
+    if (data === "" || data === null) {
+      alert("Error: Empty tweets cannot not be posted!\nPlease write a tweet message ... :)");
+      return false;
+    } else if (data.length > 140) {
+      alert("Error: Your tweet cannot be posted because it exceeds the 140 character limit!\n");
+      $('#tweet-text').val('');
+      return false;
+    }
+    $.post('/tweets', $(this).serialize(), function () {
+      console.log("success");
     })
   });
   loadTweets()
 });
 
 let loadTweets = function() {
-  $.get( "/tweets", function( data ) {
+  $.get( "/tweets", function(data) {
     $(document).ready(() => {
       renderTweets(data);
     });
