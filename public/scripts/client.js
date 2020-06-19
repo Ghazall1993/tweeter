@@ -42,6 +42,11 @@ const createTweetElement = function (tweet) {
 };
 
 const renderTweets = function (tweets) {
+  // remove all tweets
+  $('article.tweet').remove()
+
+  tweets = tweets.reverse();
+
   for (tweet of tweets) {
     let $tweet = createTweetElement(tweet);
     $('.container').append($tweet);
@@ -63,15 +68,17 @@ $(document).ready(function () {
     }
     $.post('/tweets', $(this).serialize(), function () {
       console.log("success");
+      loadTweets();
+      $('#tweet-text').val('');
     })
   });
   loadTweets()
 });
 
-let loadTweets = function() {
-  $.get( "/tweets", function(data) {
+let loadTweets = function () {
+  $.get("/tweets", function (data) {
     $(document).ready(() => {
       renderTweets(data);
     });
-  },"json");
+  }, "json");
 }
