@@ -22,9 +22,7 @@ const createTweetElement = function (tweet) {
           ${tweet.user.handle}
         </span>
       </header>
-      <div class="content">
-        ${tweet.content.text}
-      </div>
+      ${($(`<div class="content">`).text(tweet.content.text)).prop('outerHTML')}
       <footer>
         <div>
           ${date_diff_indays(tweet.created_at, Date.now())} days ago
@@ -56,7 +54,7 @@ const renderTweets = function (tweets) {
 $(document).ready(function () {
   $('.submit-tweet').on('submit', function (event) {
     event.preventDefault();
-    const data = $(this).serialize().slice(5);;
+    const data = $(this).serialize().slice(5);
     // check if the tweet text is null or exceeds the character limits
     if (data === "" || data === null) {
       alert("Error: Empty tweets cannot not be posted!\nPlease write a tweet message ... :)");
@@ -64,12 +62,14 @@ $(document).ready(function () {
     } else if (data.length > 140) {
       alert("Error: Your tweet cannot be posted because it exceeds the 140 character limit!\n");
       $('#tweet-text').val('');
+
       return false;
     }
     $.post('/tweets', $(this).serialize(), function () {
       console.log("success");
       loadTweets();
       $('#tweet-text').val('');
+      $('#tweet-text').change();
     })
   });
   loadTweets()
