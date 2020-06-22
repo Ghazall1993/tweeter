@@ -18,7 +18,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Sreenshot of tweeter's desktop view"](https://github.com/Ghazall1993/tweeter/blob/master/docs/desktop-view.png?raw=true)
-!["Sreenshot of tweeter's tablet view"](https://github.com/Ghazall1993/tweeter/blob/master/docs/tablet-view.png?raw=true)
-!["Error message"](https://github.com/Ghazall1993/tweeter/blob/master/docs/tweeter-error.png?raw=true)
-!["Error message 2"](https://github.com/Ghazall1993/tweeter/blob/master/docs/tweeter-error2.png?raw=true)
+!["Sreenshot of tweeter's desktop view"](https://github.com/Ghazall1993/tweeter/blob/master/docs/desktop-view.png?raw=true)<br/>
+
+!["Sreenshot of tweeter's tablet view"](https://github.com/Ghazall1993/tweeter/blob/master/docs/tablet-view.png?raw=true)<br/>
+
+!["Error message"](https://github.com/Ghazall1993/tweeter/blob/master/docs/tweeter-error.png?raw=true)<br/>
+
+!["Error message 2"](https://github.com/Ghazall1993/tweeter/blob/master/docs/tweeter-error2.png?raw=true)<br/>
